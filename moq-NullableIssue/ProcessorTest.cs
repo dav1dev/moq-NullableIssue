@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Moq;
 using Xunit;
 
@@ -16,7 +16,7 @@ namespace moq_NullableIssue
         }
 
         [Fact]
-        public void Process_SetupGuid_GetUnexpectedException()
+        public void Process_SetupDoWithGuid_GetUnexpectedException()
         {
             var id = Guid.NewGuid();
             var data = Mock.Of<DataStructureGuid>(x => x.Id == id);
@@ -26,7 +26,7 @@ namespace moq_NullableIssue
         }
 
         [Fact]
-        public void Do_SetupInt_GetUnexpectedException()
+        public void Process_SetupDoWithInt_GetUnexpectedException()
         {
             const int id = int.MaxValue;
             var data = Mock.Of<DataStructureInt>(i => i.Id == id);
